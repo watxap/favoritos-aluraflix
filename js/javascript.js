@@ -3,4 +3,5 @@ function agregarPelicula(){
     var elementoListaPeliculas = document.getElementById('listaPeliculas')
     elementoListaPeliculas.innerHTML = elementoListaPeliculas.innerHTML + '<img src=' + peliculaFavorita + '>'
     document.getElementById('pelicula').value = ''
+    console.log(elementoListaPeliculas)
   }
