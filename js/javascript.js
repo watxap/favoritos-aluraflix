@@ -11,17 +11,28 @@ document.write(`<div class="form-wrapper">
 <button onClick="agregarPelicula()">Agregar película</button>
 </div>`)
 
+var peliculaFavorita
+var trailerPelicula
 var listadoPeliculas = []
 
 function agregarPelicula(){
+  
   var peliculaFavorita = document.getElementById('pelicula').value
   var trailerPelicula = document.getElementById('trailer').value
+  if (
+    (peliculaFavorita.endsWith("jpg") || peliculaFavorita.endsWith("jpeg"))
+  ) {
   var elementoListaPeliculas = document.getElementById('listaPeliculas')
   elementoListaPeliculas.innerHTML = elementoListaPeliculas.innerHTML + `<a href=${trailerPelicula} target="_blank"><img src="${peliculaFavorita}"></a>`
-  listadoPeliculas.push(peliculaFavorita)
+  listadoPeliculas.push(trailerPelicula)
   console.log(listadoPeliculas)
   document.getElementById('pelicula').value = ''
   document.getElementById('trailer').value = ''
+  } else {
+    alert("La URL de la imagen debe finalizar en .jpg o .jpeg");
   }
+}
 
 
+
+  
